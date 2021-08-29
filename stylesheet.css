@@ -1,8 +1,18 @@
 @charset "utf-8";
 
-a:hover, .active{
-    text-decoration: underline;
+/* 検証ツールからコピーしたもの */
+body{
+	font: 14px/1.9 'Noto Sans JP', Arial, Verdana, YuGothic, 游ゴシック体, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
+	font-weight: 300;
+	-webkit-text-size-adjust:100%;
+	overflow-x: hidden;
+	color: #000;
+	background: #fff;
+    margin: 0px;
 }
+/* https://developer.mozilla.org/ja/docs/Web/CSS/text-size-adjust　*/
+
+/*　ここまでコピーしました */
 
 ul {
     list-style: none;
@@ -13,18 +23,40 @@ li {
 }
 
 section{
-	text-align: center;
-    background-image: url(images/borderBlack.png) repeat-x 50%;
+	clear:both;
+	padding-top: 71px;
+    padding-bottom: 41px;
+}
+
+/* section{ */
+	/* text-align: center; */
+    /* background-image: url(images/borderBlack.png) repeat-x 50%; */
     /* repeatは背景画像の繰り返し方法を指定します。 */
-    background-size: 1px 1px;
-    padding-top: 30px;
+    /* background-size: 1px 1px; */
+    /* padding-top: 30px; */
+/* } */
+
+section h2{
+	font-family: 'Pacifico', cursive;
+	width: 60%;
+	margin: 0 auto 40px;
+	font-size: 26px;
+	font-weight:bold;
+	text-align: center;
+	background: url(images/borderBlack.png) repeat-x 0 50%;
+	background-size: 1px 1px;
+}
+
+section h2 span {
+	background: #fff;
+	padding: 0 80px;
 }
 
 /* class */
 .LongText{
 	width: 60%;
 	margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 20px;
 	padding-bottom: 50px;
     text-align: left;
 }
@@ -48,6 +80,19 @@ section{
     height: 100px;
 }
 
+.inner {
+    width: 94%;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+
+.innerS {
+    width: 65%;
+	margin: 0 auto;
+	padding-bottom: 80px;
+}
+
+
 /* classEnd */
 
 /* Top */
@@ -57,7 +102,7 @@ section{
 
 #TopLogo {
     padding-top: 50px;
-    padding-bottom: 40px;
+    padding-bottom: 15px;
 }
 
 #TopLogo img {
@@ -84,6 +129,7 @@ section{
 
 #nav {
     width: 100%;
+    padding-bottom: 30px;
 }
 
 #nav ul {
@@ -95,7 +141,19 @@ section{
 
 #nav ul li  {
     display: inline-block;
-    width: 8%;
+    width: 7.5%;
+}
+
+/* 文字の線を消す設定 */
+#nav ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: Arial - 300;
+}
+
+/* 文字の色を変えず線を入れる設定 */
+#nav ul li a:hover {
+    text-decoration: underline;
 }
 /* TopEnd */
 /* Message */
@@ -103,15 +161,21 @@ section{
 /* Gallery */
 #GalleryImages {
     display: grid;
-    grid-template-columns: 465px 465px 465px;
-    width: 100%;
+    grid-template-columns: 482px 482px 482px;
+    /* width: 100%; */
     justify-content:center;
+    margin-left: -48px;
     /* justify-contentプロパティは、フレックスコンテナーの主軸およびグリッドコンテナーのインライン軸に沿って、中身のアイテムの間や周囲に間隔を配置する方法を定義します。 */
 }
 
+#GalleryImages li {
+    width: 482px;
+    height: 482px;
+}
+
 #GalleryImages img {
-    width: 465px;
-    height: 465px;
+    width: 482px;
+    height: 482px;
 }
 
 #MainImage {
@@ -119,6 +183,10 @@ section{
 }
 /* GalleryEnd */
 /* Project */
+
+#ImgProject {
+    text-align: center;
+}
 
 #ImgProject img {
     width: 60%;
@@ -143,65 +211,148 @@ section{
 /* Brand */
 #ImgAndLongText2 {
     display: grid;
-    grid-template-columns: 400px 400px 400px;
-    width: 100%;
+    grid-template-columns: 350px 350px 350px;
+    /* width: 100%; */
+    margin-left: -40px;
     justify-content: center;
 }
 
+#ImgAndLongText2 img {
+    display: block;
+	margin: 0 auto 5px;
+}
+
 #ImgAndLongText2 li {
-    width: 400px;
-    height: 300px;
-    padding-bottom: 200px;
+    line-height: 2.0;
 }
 
-#ImgAndLongText2 p {
-    margin-right: 50px;
-    margin-left: 50px;
+#ImgAndLongText2 .img {
+    padding: 80px 50px;
+	margin-bottom: 40px;
+	line-height: 0 !important;
+	background: #f6f6f6;
+}
+/* line-height は CSS のプロパティで、行ボックスの高さを設定します。これは主にテキストの行間を設定するために使用します。ブロックレベル要素では、要素に含まれる行ボックスの最小の高さを指定します。非置換インライン要素では、行ボックスの高さの計算に使われる高さを指定します。 */
+
+
+#ImgAndLongText2 .LongText2 {
+    width: 80%;
 }
 
+/* 検証ツールを元に書いたコード */
 #BgSec04AndLogoBrand {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
+    background: url(images/bgSec04.jpg) no-repeat 100% 100% fixed;
+	background-size: cover;
+	-webkit-background-size: cover;
+	text-align: center;
+	padding: 220px 20px;
+    /* width: 100%; */
+    /* height: 500px; */
+    /* position: relative; */
+    /* overflow: hidden; */
+    /* text-align: center; */
 }
+/* ここまで検証ツールをもとにしました。 */
+/* coverとは画像の縦横比を崩すことなく、画像ができるだけ大きくなるよう拡大縮小します。画像の縦横比が要素と異なる場合、空き領域が残らないように上下または左右のどちらかを切り取ります。 */
 
-#LogoBrand {
-    position: absolute;
-    top: 40%;
-    left: 38%;
-}
+/* #LogoBrand { */
+    /* position: absolute; */
+    /* top: 40%; */
+    /* left: 40%; */
+/* } */
 
-#LogoBrand img {
-    width: 400px;
-    height: 100px;
-}
+/* #LogoBrand img { */
+    /* width: 310px; */
+    /* height: 100px; */
+/* } */
 /* BrandEnd */
 /* Company */
-#COMPANY li {
-    text-align: left;
-    padding-left: 300px;
+/* #COMPANY div ul li { */
+    /* display: inline-block; */
+	/* width: 100%; */
+	/* margin: 20px 0; */
+/* } */
+
+#COMPANY p{
+    margin-bottom: 5px;
+    line-height: 1.2;
+    /* width: 300px; */
+    /* margin-block-start: 1em; */
+    /* margin-block-end: 1em; */
+}
+
+#address  {
+    display:grid;
+    grid-template-columns:38% 52%;
+  }
+/* https://qiita.com/kura07/items/e633b35e33e43240d363 */
+
+#address li {
+    /* display: inline-block; */
+	/* width: 100%; */
+	margin-bottom: 20px;
+}
+
+#SNS {
+    padding-top: 25px;
 }
 
 #SNS img {
     width: 20px;
-    height: 20px;
-}
-/* CompanyEnd */
-/* Footer */
-#Footer {
-    font-size: 11px;
-    text-align: center;
-    padding-top: 100px;
+    height: auto;
+    padding-right: 10px;
 }
 
+#SNS a:hover img{
+	opacity: .8;
+}
+
+#googleMap{
+	position: relative;
+    padding: 70px 250px;
+	padding-bottom: 75%;
+	height: 0;
+	overflow: hidden;
+	z-index: 0;
+}
+
+#googleMap iframe{
+    position: absolute;
+	top: 0;
+	left: 0;
+	width: 120% !important;
+	height: 90% !important;
+    /* 通常CSSでは後から書いたものほど優先されるけど、!importantを使った部分は記述場所に関係なく優先されるよ。 */
+	border: 0;
+}
+/* CompanyEnd */
+/* footer */
+footer {
+    font-size: 11px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+/* footerEnd */
 
 /* --------responsiveDesign(max-width:480px)---------- */
 @media screen and (max-width:480px) {
     body {
         font-size: 14px;
     }
+
+    section h2{
+        font-family: 'Pacifico', cursive;
+        width: 60%;
+        margin: 0 auto 40px;
+        font-size: 26px;
+        font-weight:bold;
+        text-align: center;
+        background: url(images/borderBlack.png) repeat-x 0 50%;
+        background-size: 1px 1px;
+        margin-left: 65px;
+    }
+
 /* class */
     .LongText {
         width: 95%;
@@ -248,11 +399,17 @@ section{
         flex-direction: column;
     }
 
+    #GalleryImages li {
+        width: 100%;
+        height: auto;
+    }
+
     #GalleryImages img {
         display: flex;
         flex-direction: column;
         width: 100%;
         height: auto;
+        margin: 0px;
     }
 /* GalleryEnd */
 /* Project */
@@ -269,39 +426,75 @@ section{
         display: flex;
         flex-direction: column;
         width: 100%;
-        justify-content: center;
+        /* justify-content: center; */
+    }
+
+    #ImgAndLongText2 .img {
+        width: 375px;
+        height: 200px;
+        margin-bottom: 10px;
+        /* line-height: 0 !important; */
+        background: #f6f6f6;
+        background-size: 100%;
+    }
+
+    #ImgAndLongText2 .img img {
+        margin: 0px;
+        margin-right: 0px;
     }
 
     #BgSec04AndLogoBrand {
         position: relative;
         overflow: hidden;
         text-align: center;
-        width: 100%;
-        height: 200px;
-        padding-top: 100px;
+        width: 90%;
+        height: 0px;
+        padding-top: 0px;
     }
 
-    #LogoBrand {
+    #BgSec04AndLogoBrand img {
         position: absolute;
-        top: 50%;
+        top: 30%;
         bottom: 10%;
-        right: 30%;
-        left: 6%;
-        width: 300px;
+        right: 60%;
+        left: 5%;
+        width: 330px;
         height: 100px;
     }
 
     #LogoBrand img {
-        width: 330px;
+        width: 300px;
         height: 100px;
     }
-}
+
+
 /* BrandEnd */
 /* Company */
-/* CompanyEnd */
+    #address {
+        display: flex;
+        flex-direction: column;  
+    }
+    #address li {
+        width: 100%;
+        height: auto;
+        margin-bottom: 50px;
+    }
 
+    #addressOfText {
+        margin-left: -100px;
+    }
+
+    #googleMap {
+        width: 60%;
+        height: 110px;
+        padding: 50%;
+        margin-left: -80px;
+        /* text-align: center; */
+    }
+/* CompanyEnd */
+}
 /* --------responsiveDesign(max-width:960px)---------- */
-@media screen and (max-width:960px) {
+@media screen and (max-width:960px) and (min-width:481px) {
     body {
         font-size: 14px;
     }
@@ -354,6 +547,11 @@ section{
         justify-content:center;
     }
 
+    #GalleryImages li {
+        width: 270px;
+        height: 270px;
+    }
+
     #GalleryImages img {
         width: 270px;
         height: 270px;
@@ -376,16 +574,16 @@ section{
 
     #BgSec04AndLogoBrand {
         width: 100%;
-        height: 500px;
+        height: auto;
         position: relative;
         overflow: hidden;
         text-align: center;
     }
     
-    #LogoBrand {
+    #BgSec04AndLogoBrand img {
         position: absolute;
         top: 38%;
-        left: 25%;
+        left: 31%;
     }
     
     #LogoBrand img {
@@ -394,5 +592,16 @@ section{
     }
 /* BrandEnd */
 /* Company */
+    #googleMap {
+        width: 5%;
+        height: auto;
+        padding: 50%;
+        /* margin-left: -80px; */
+        /* text-align: center; */
+    }
+
+    #address li {
+        padding: 10px;
+    }
 /* CompanyEnd */
 }
