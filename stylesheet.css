@@ -10,9 +10,8 @@ body{
 	background: #fff;
     margin: 0px;
 }
-/* https://developer.mozilla.org/ja/docs/Web/CSS/text-size-adjust　*/
-
 /*　ここまでコピーしました */
+/* https://developer.mozilla.org/ja/docs/Web/CSS/text-size-adjust　*/
 
 ul {
     list-style: none;
@@ -227,7 +226,7 @@ section h2 span {
 }
 
 #ImgAndLongText2 .img {
-    padding: 80px 50px;
+    /* padding: 80px 50px; */
 	margin-bottom: 40px;
 	line-height: 0 !important;
 	background: #f6f6f6;
@@ -362,11 +361,17 @@ footer {
 
     .img {
         background-color: rgb(226, 226, 226);
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 4px;
     }
 
     .img img {
-        width: 150px;
-        height: 70px;
+        width: 170px;
+        height: 106px;
+        margin-right: 0px;
     }
 /* classEnd */
 /* Top */
@@ -430,17 +435,22 @@ footer {
     }
 
     #ImgAndLongText2 .img {
-        width: 375px;
-        height: 200px;
-        margin-bottom: 10px;
+        /* width: 375px; */
+        /* height: 200px; */
+        /* margin-bottom: 10px; */
         /* line-height: 0 !important; */
-        background: #f6f6f6;
-        background-size: 100%;
+        /* background: #f6f6f6; */
+        /* background-size: 100%; */
     }
 
     #ImgAndLongText2 .img img {
-        margin: 0px;
-        margin-right: 0px;
+        /* margin: 0px; */
+        /* margin-right: 0px; */
+    }
+
+    #ImgAndLongText2 p {
+        width: 70%;
+        /* margin-left: 10px; */
     }
 
     #BgSec04AndLogoBrand {
