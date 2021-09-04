@@ -95,11 +95,16 @@ section h2 span {
 /* classEnd */
 
 /* Top */
+#header {
+    width: 100%;
+}
+
 #header div h1 {
     text-align: center;
 }
 
 #TopLogo {
+    width: 100%;
     padding-top: 50px;
     padding-bottom: 15px;
 }
@@ -477,7 +482,10 @@ footer {
         transform: translateY(10px);
         transition: 0.3s ease-in-out;
     }
-  
+    /* CSSの::afterと::beforeは、疑似要素と呼ばれるものの1つです。これを使うと「HTMLには書かれていない要素もどきをCSSで作ることができる」のです。 https://saruwakakun.com/html-css/basic/before-after */
+    /* CSS の content プロパティは、要素を生成された値で置き換えます。  https://developer.mozilla.org/ja/docs/Web/CSS/content */
+    /* CSS のプロパティ transform は、与えられた要素を回転、拡大縮小、傾斜、移動することできます。 https://developer.mozilla.org/ja/docs/Web/CSS/transform  移動、回転、伸縮は、3D（XYZ方向）による指定ができます。https://qiita.com/7968/items/eddfeb4b424d7c2d2d34 */
+
     #navbtn::before{
         transform: translateY(-10px);
         box-shadow: 0 10px #333333;
