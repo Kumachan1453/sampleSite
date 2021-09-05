@@ -1,5 +1,18 @@
 @charset "utf-8";
 
+@media screen and (min-width:480px){
+    #navbtn{
+        display: none;
+    }
+    .arrow{
+        display: none;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* 検証ツールからコピーしたもの */
 body{
 	font: 14px/1.9 'Noto Sans JP', Arial, Verdana, YuGothic, 游ゴシック体, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
@@ -25,6 +38,7 @@ section{
 	clear:both;
 	padding-top: 71px;
     padding-bottom: 41px;
+    /* overflow: scroll; */
 }
 
 /* section{ */
@@ -36,7 +50,7 @@ section{
 /* } */
 
 section h2{
-	font-family: 'Pacifico', cursive;
+	font-family: "Pacifico", "cursive";
 	width: 60%;
 	margin: 0 auto 40px;
 	font-size: 26px;
@@ -52,6 +66,18 @@ section h2 span {
 }
 
 /* class */
+/* .arrow { */
+    /* display: none; */
+    /* margin: 0; */
+    /* text-indent: 100%; */
+    /* white-space: nowrap; */
+    /* overflow: hidden; */
+/* } */
+
+/* CSS の text-indent プロパティは、ブロック内のテキストの行の前に置く空白 (字下げ) の幅を設定します。　https://developer.mozilla.org/ja/docs/Web/CSS/text-indent */
+/* CSS の white-space プロパティは、要素内のホワイトスペースをどのように扱うかを設定します。　https://developer.mozilla.org/ja/docs/Web/CSS/white-space */
+/* CSS の overflow プロパティは、要素の内容が多すぎてブロック整形コンテキストに収まらない場合にどうするかを設定します。これは overflow-x および overflow-y の一括指定です。　https://developer.mozilla.org/ja/docs/Web/CSS/overflow */
+
 .LongText{
 	width: 60%;
 	margin: 0 auto;
@@ -97,21 +123,25 @@ section h2 span {
 /* Top */
 #header {
     width: 100%;
+    z-index: 999;
 }
 
 #header div h1 {
     text-align: center;
+    z-index: 999;
 }
 
 #TopLogo {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 15px;
+    z-index: 999;
 }
 
 #TopLogo img {
     width: 140px;
     height: 80px;
+    z-index: 999;
 }
 
 #MainImage {
@@ -368,6 +398,15 @@ footer {
     }
 
 /* class */
+
+    .arrow{
+        display: block;
+        margin-right: 0px;
+        z-index: 9999;
+        /* margin: 0px; */
+        /* width: 10px; */
+    }
+
     .LongText {
         width: 95%;
         height: auto;
@@ -409,7 +448,7 @@ footer {
 		width: 100%;
 		height: 70px;
 		background: #fff;
-		border-bottom: 1px solid #ccc;
+		/* border-bottom: 1px solid #ccc; */
         /* padding-top: 30px; */
         padding-top: 0px;
         padding-bottom: 0px;
@@ -434,50 +473,77 @@ footer {
     
     #nav {
         position: fixed;
-        top: 0;
-        left: 100%;
+        bottom: 100%;
+        /* top: 0; */
+        /* left: 100%; */
         width: 100%;
-        height: 100vh;
-        background: rgba(0,0,0,0.9);
+        height: 44vh;
+        background: white;
         color: #ffffff;
         display: flex;
-        justify-content: center;
+        /* flex-direction: column; */
+        /* justify-content: center; */
         align-items: center;
         /* 右からスライド */
-        transition: left 0.5s;
+        transition: bottom 0.5s;
+        padding-bottom: 0px;
+        border-bottom: 1px solid #ccc;
     }
 
     #nav ul{
         list-style:none;
+        text-align: left;
+        /* display: table; */
     }
 
-    #nav li:not(:last-child){
-        margin-bottom: 30px;
+    #nav ul li {
+        width: 100vw;
+        height: 15vw;
+        display: table;
+        /* padding: 15px; */
+        border-bottom: 1px solid #ccc;
     }
 
-    #nav a{
-        color: #ffffff;
+    /* #nav li:not(:last-child){ */
+        /* display: block; */
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* margin: 30px; */
+    /* } */
+
+    #nav ul li a{
+        display: table-cell;
+        vertical-align: middle;
+        /* display: block; */
+        /* width: 100vw; */
+        /* height: 15vw; */
+        font-size: 14px;
+        /* border-bottom: 1px solid #ccc; */
+        /* margin: 0 auto; */
     }
 
     /* ナビゲーションボタン（開く） */
     #navbtn{
         position: fixed;
-        top: 15px;
-        right: 15px;
+        top: 35px;
+        right: 20px;
+        /* padding: 20px; */
         padding: 0;
         outline: none;
         border: none;
         background: none;
-        width: 30px;
-        height: 20px;
+        /* background-size: 10px; */
+        width: 18px;
+        height: 2px;
         cursor: pointer;
+        z-index: 999;
     }
   
     #navbtn::before,
     #navbtn::after{
         content : '';
         display: block;
-        height: 1px;
+        height: 2px;
         background-color: #333333;
         transform: translateY(10px);
         transition: 0.3s ease-in-out;
@@ -493,7 +559,7 @@ footer {
   
     /* ナビゲーションボタン（閉じる） */
     .open #navbtn{
-        z-index: 100;
+        z-index: 999;
     }
     .open #navbtn::before{
         transform: rotate(-45deg);
@@ -505,7 +571,7 @@ footer {
     }
     /* ナビゲーションメニュー 開いた時*/
     .open #nav{
-        left: 0;
+        bottom: 48%;
     }
     /* ここまで */
   
