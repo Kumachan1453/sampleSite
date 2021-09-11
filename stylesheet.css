@@ -30,16 +30,7 @@ section{
 	clear:both;
 	padding-top: 71px;
     padding-bottom: 41px;
-    /* overflow: scroll; */
 }
-
-/* section{ */
-	/* text-align: center; */
-    /* background-image: url(images/borderBlack.png) repeat-x 50%; */
-    /* repeatは背景画像の繰り返し方法を指定します。 */
-    /* background-size: 1px 1px; */
-    /* padding-top: 30px; */
-/* } */
 
 section h2{
 	font-family: "Pacifico", "cursive";
@@ -57,14 +48,6 @@ section h2 span {
 	padding: 0 80px;
 }
 
-/* class */
-/* .arrow { */
-    /* display: none; */
-    /* margin: 0; */
-    /* text-indent: 100%; */
-    /* white-space: nowrap; */
-    /* overflow: hidden; */
-/* } */
 
 /* CSS の text-indent プロパティは、ブロック内のテキストの行の前に置く空白 (字下げ) の幅を設定します。　https://developer.mozilla.org/ja/docs/Web/CSS/text-indent */
 /* CSS の white-space プロパティは、要素内のホワイトスペースをどのように扱うかを設定します。　https://developer.mozilla.org/ja/docs/Web/CSS/white-space */
@@ -115,25 +98,25 @@ section h2 span {
 /* Top */
 #header {
     width: 100%;
-    z-index: 999;
+    z-index: 1;
 }
 
 #header div h1 {
     text-align: center;
-    z-index: 999;
+    z-index: 1;
 }
 
 #TopLogo {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 15px;
-    z-index: 999;
+    z-index: 1;
 }
 
 #TopLogo img {
     width: 140px;
     height: 80px;
-    z-index: 999;
+    z-index: 1;
 }
 
 #MainImage {
@@ -290,9 +273,6 @@ section h2 span {
 #COMPANY p{
     margin-bottom: 5px;
     line-height: 1.2;
-    /* width: 300px; */
-    /* margin-block-start: 1em; */
-    /* margin-block-end: 1em; */
 }
 
 #address  {
@@ -302,8 +282,6 @@ section h2 span {
 /* https://qiita.com/kura07/items/e633b35e33e43240d363 */
 
 #address li {
-    /* display: inline-block; */
-	/* width: 100%; */
 	margin-bottom: 20px;
 }
 
@@ -327,7 +305,7 @@ section h2 span {
 	padding-bottom: 75%;
 	height: 0;
 	overflow: hidden;
-	z-index: 0;
+	z-index: auto;
 }
 
 #googleMap iframe{
@@ -413,7 +391,7 @@ footer {
         height: 70px;
         position: fixed;
         background-color: white;
-        z-index: 10;
+        z-index: 1;
         /* z-indexに関するサイト https://techacademy.jp/magazine/34566 */
     }
 
@@ -422,10 +400,9 @@ footer {
 		width: 100%;
 		height: 70px;
 		background: #fff;
-		/* border-bottom: 1px solid #ccc; */
-        /* padding-top: 30px; */
         padding-top: 0px;
         padding-bottom: 0px;
+        border-bottom: 1px solid #ccc;
 	}
 	
 	#header h1{
@@ -451,32 +428,32 @@ footer {
         width: 100%;
         background: white;
         display: flex;
-        /* flex-direction: column; */
-        /* justify-content: center; */
         align-items: center;
         /* 右からスライド */
         transition: bottom 0.5s;
         padding-bottom: 0px;
-        border-bottom: 1px solid #ccc;
     }
 
     #nav ul{
         text-align: left;
-        height: 40.5vh;
+        height: 40.5%;
     }
 
     #nav ul li {
-        width: 100vw;
-        display: table;
+        width: 100%;
         border-bottom: 1px solid #ccc;
     }
 
     #nav ul li a{
-        display: table-cell;
+        display: block;
         vertical-align: middle;
-        width: 100vw;
         font-size: 14px;
     }
+
+    #nav ul li a p{
+        display: inline-block;
+    }
+
 
     /* ナビゲーションボタン（開く） */
     #navbtn{
@@ -491,7 +468,7 @@ footer {
         width: 18px;
         height: 2px;
         cursor: pointer;
-        z-index: 999;
+        z-index: 1;
     }
   
     #navbtn::before,
@@ -514,7 +491,7 @@ footer {
   
     /* ナビゲーションボタン（閉じる） */
     .open #navbtn{
-        z-index: 999;
+        z-index: 1;
     }
     .open #navbtn::before{
         transform: rotate(-45deg);
@@ -526,7 +503,7 @@ footer {
     }
     /* ナビゲーションメニュー 開いた時*/
     .open #nav{
-        bottom: 53.5vh;
+        bottom: 51.3%;
     }
     /* ここまで */
 
@@ -568,7 +545,6 @@ footer {
 
     #ImgAndLongText2 p {
         width: 70%;
-        /* margin-left: 10px; */
     }
 
     #ImgAndLongText2 .LongText2 {
