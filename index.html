@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 </head>
 <body>
     <header id="header">
@@ -45,17 +47,56 @@
         <!-- <header> -->
             <!-- <h2><span>Gallery</span></h2> -->
         <!-- </header> -->
-        <ul id="GalleryImages">
-            <li><img src="images/photo01.jpg"></li>
-            <li><img src="images/photo02.jpg"></li>
-            <li><img src="images/photo03.jpg"></li>
-            <li><img src="images/photo04.jpg"></li>
-            <li><img src="images/photo05.jpg"></li>
-            <li><img src="images/photo06.jpg"></li>
-            <li><img src="images/photo07.jpg"></li>
-            <li><img src="images/photo08.jpg"></li>
-            <li><img src="images/photo09.jpg"></li>
-        </ul>
+        <div class="slider">
+            <div class="slide">
+                <ul>    
+                    <li><img src="images/photo03.jpg" alt="" /></li>
+                    <li><img src="images/photo04.jpg" alt="" /></li>
+                    <li><img src="images/photo05.jpg" alt="" /></li>
+                    <li><img src="images/photo06.jpg" alt="" /></li>
+                    <li><img src="images/photo07.jpg" alt="" /></li>
+                    <li><img src="images/photo08.jpg" alt="" /></li>
+                    <li><img src="images/photo09.jpg" alt="" /></li>
+                    <li><img src="images/photo01.jpg" alt="" /></li>
+                    <li><img src="images/photo02.jpg" alt="" /></li>   
+                </ul>
+            </div>
+            <div class="controller">
+                <div class="prev-btn btns">
+                    <i class="fas fa-angle-left fa-3x"></i>
+                    <!-- <i class="fas fa-angle-left fa-3x"></i>　とは何か？　https://web-manabu.com/fontawesome4-7-list/ -->
+                </div>
+                <div class="indicator">
+                    <span id="active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="next-btn btns">
+                    <i class="fas fa-angle-right fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="slide">
+            <ul id="GalleryImages">
+                <li><img src="images/photo01.jpg"></li>
+                <li><img src="images/photo02.jpg"></li>
+                <li><img src="images/photo03.jpg"></li>
+                <li><img src="images/photo04.jpg"></li>
+                <li><img src="images/photo05.jpg"></li>
+                <li><img src="images/photo06.jpg"></li>
+                <li><img src="images/photo07.jpg"></li>
+                <li><img src="images/photo08.jpg"></li>
+                <li><img src="images/photo09.jpg"></li>
+            </ul>
+            <button type="button" id="buttonPrev">＜</button>
+            <button type="button" id="buttonNext">＞</button>
+        </div>   -->
     </section>
 <!-- GalleryEnd -->
 <!-- Project -->

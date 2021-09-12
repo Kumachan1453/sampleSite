@@ -136,6 +136,11 @@ section h2 span {
     margin-left: -640px;
 }
 
+
+#MainImage {
+    text-align: center;
+}
+
 #nav {
     width: 100%;
     padding-bottom: 30px;
@@ -177,12 +182,132 @@ section h2 span {
 /* Message */
 /* MessageEnd */
 /* Gallery */
-#GalleryImages {
+
+.slider {
+    position: relative;
+    width: 482px;
+    height: 482px;
+    padding: 0;
+    margin: 1rem auto;
+    box-sizing: unset;
+    border-radius: 6px;
+}
+.slider .slide {
+    width: 482px;
+    height: 482px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider .slide img {
+    padding: 0;
+    margin: 0;
+    width: 482px;
+    height: 482px;
+}
+
+.slider .slide ul {
+    /* width: 1248px; */
+    /* height: 482px; */
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style: none;
+    font-size: 0;
+    position: relative;
+}
+.slider .slide li {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: absolute;
+    transition: 0.7s cubic-bezier(0.45, 0.06, 0.32, 1);
+    /* イージングの説明　https://ics.media/entry/18730/ */
+    /* cubic-bezier() https://cubic-bezier.com/#1,.24,0,.99 */
+    /* cubic-bezier() 関数記法は、3次ベジェ曲線 を定義します。この曲線は連続的であり、アニメーションの始まりや終わりを緩やかにするためによく使用されます。このため、イージング関数と呼ばれることもあります。 */
+}
+
+.slide li:nth-of-type(1) {
+    left: -482px;
+}
+.slide li:nth-of-type(2) {
+    left: 0px;
+}
+.slide li:nth-of-type(3) {
+    left: 482px;
+}
+.slide li:nth-of-type(4) {
+    left: -482px;
+}
+.slide li:nth-of-type(5) {
+    left: 0px;
+}
+.slide li:nth-of-type(6) {
+    left: 482px;
+}
+.slide li:nth-of-type(7) {
+    left: -482px;
+}
+.slide li:nth-of-type(8) {
+    left: 0px;
+}
+.slide li:nth-of-type(9) {
+    left: 482px;
+}
+/* nth-of-typeとは何か？（nth-childとの違いも踏まえて）　https://techacademy.jp/magazine/25452 */
+
+.controller {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.controller .prev-btn {
+    /* margin-left: 5rem; */
+    cursor: pointer;
+    color: #181818;
+}
+.controller .next-btn {
+    /* margin-right: 5rem; */
+    cursor: pointer;
+    color: #181818;
+}
+
+.controller .indicator {
+    display: flex;
+    width: 180px;
+    height: 16px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    /* background: #181818; */
+    border-radius: 10px;
+}
+
+.indicator span {
+    width: 8px;
+    height: 8px;
+    background: rgb(212, 212, 212);
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 4px 0 4px;
+}
+
+#active {
+    background: gray;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* #GalleryImages {
     display: grid;
     grid-template-columns: 482px 482px 482px;
     justify-content:center;
     margin-left: -48px;
-    /* justify-contentプロパティは、フレックスコンテナーの主軸およびグリッドコンテナーのインライン軸に沿って、中身のアイテムの間や周囲に間隔を配置する方法を定義します。 */
 }
 
 #GalleryImages li {
@@ -197,7 +322,8 @@ section h2 span {
 
 #MainImage {
     text-align: center;
-}
+} */
+
 /* GalleryEnd */
 /* Project */
 
@@ -429,7 +555,6 @@ footer {
         background: white;
         display: flex;
         align-items: center;
-        /* 右からスライド */
         transition: bottom 0.5s;
         padding-bottom: 0px;
     }
@@ -511,7 +636,49 @@ footer {
 /* Message */
 /* MessageEnd */
 /* Gallery */
-    #GalleryImages {
+    .slider {
+        width: 300px;
+        height: 300px;
+    }
+    .slider .slide {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .slider .slide img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .slide li:nth-of-type(1) {
+        left: -300px;
+    }
+    .slide li:nth-of-type(2) {
+        left: 0px;
+    }
+    .slide li:nth-of-type(3) {
+        left: 300px;
+    }
+    .slide li:nth-of-type(4) {
+        left: -300px;
+    }
+    .slide li:nth-of-type(5) {
+        left: 0px;
+    }
+    .slide li:nth-of-type(6) {
+        left: 300px;
+    }
+    .slide li:nth-of-type(7) {
+        left: -300px;
+    }
+    .slide li:nth-of-type(8) {
+        left: 0px;
+    }
+    .slide li:nth-of-type(9) {
+        left: 300px;
+    }
+    
+    /* #GalleryImages {
         display: flex;
         flex-direction: column;
     }
@@ -527,7 +694,7 @@ footer {
         width: 100%;
         height: auto;
         margin: 0px;
-    }
+    } */
 /* GalleryEnd */
 /* Project */
     #ImgProject img {
