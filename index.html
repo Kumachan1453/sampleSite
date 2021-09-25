@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/js/all.min.js"></script>
 </head>
 <body>
     <header id="header">
@@ -14,14 +16,16 @@
         </div>
         <div id="nav">
             <ul>
-                <li><a href="#TOP">TOP</a></li>
-                <li><a href="#MESSAGE">MESSAGE</a></li>
-                <li><a href="#GALLERY">GALLERY</a></li>
-                <li><a href="#PROJECT">PROJECT</a></li>
-                <li><a href="#BRAND">BRAND</a></li>
-                <li><a href="#COMPANY">COMPANY</a></li>
-            </ul>
+                <li><a class="headerList" href="#TOP"><p class="arrow">></p><p>TOP</p></a></li>
+                <li><a class="headerList" href="#MESSAGE"><p class="arrow">></p><p>MESSAGE</p></a></li>
+                <li><a class="headerList" href="#GALLERY"><p class="arrow">></p><p>GALLERY</p></a></li>
+                <li><a class="headerList" href="#PROJECT"><p class="arrow">></p><p>PROJECT</p></a></li>
+                <li><a class="headerList" href="#BRAND"><p class="arrow">></p><p>BRAND</p></a></li>
+                <li><a class="headerList" href="#COMPANY"><p class="arrow">></p><p>COMPANY</p></a></li>
+    　       </ul>
+            <!-- <p class="arrow">></p> -->
         </div>
+        <button type="button" id="navbtn"></button>
     </header>
     <!-- background-image: url(images/mainImg.jpg); -->
     <div id="MainImage">
@@ -40,20 +44,59 @@
 <!-- MessageEnd -->
 <!-- Gallery -->
     <section id="GALLERY">
-        <header>
+        <!-- <header> -->
             <!-- <h2><span>Gallery</span></h2> -->
-        </header>
-        <ul id="GalleryImages">
-            <li><img src="images/photo01.jpg"></li>
-            <li><img src="images/photo02.jpg"></li>
-            <li><img src="images/photo03.jpg"></li>
-            <li><img src="images/photo04.jpg"></li>
-            <li><img src="images/photo05.jpg"></li>
-            <li><img src="images/photo06.jpg"></li>
-            <li><img src="images/photo07.jpg"></li>
-            <li><img src="images/photo08.jpg"></li>
-            <li><img src="images/photo09.jpg"></li>
-        </ul>
+        <!-- </header> -->
+        <div class="slider">
+            <div class="slide">
+                <ul>    
+                    <li><img src="images/photo03.jpg" alt="" /></li>
+                    <li><img src="images/photo04.jpg" alt="" /></li>
+                    <li><img src="images/photo05.jpg" alt="" /></li>
+                    <li><img src="images/photo06.jpg" alt="" /></li>
+                    <li><img src="images/photo07.jpg" alt="" /></li>
+                    <li><img src="images/photo08.jpg" alt="" /></li>
+                    <li><img src="images/photo09.jpg" alt="" /></li>
+                    <li><img src="images/photo01.jpg" alt="" /></li>
+                    <li><img src="images/photo02.jpg" alt="" /></li>   
+                </ul>
+            </div>
+            <div class="controller">
+                <div class="prev-btn btns">
+                    <i class="fas fa-angle-left fa-3x"></i>
+                    <!-- <i class="fas fa-angle-left fa-3x"></i>　とは何か？　https://web-manabu.com/fontawesome4-7-list/ -->
+                </div>
+                <div class="indicator">
+                    <span id="active"></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="next-btn btns">
+                    <i class="fas fa-angle-right fa-3x"></i>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="slide">
+            <ul id="GalleryImages">
+                <li><img src="images/photo01.jpg"></li>
+                <li><img src="images/photo02.jpg"></li>
+                <li><img src="images/photo03.jpg"></li>
+                <li><img src="images/photo04.jpg"></li>
+                <li><img src="images/photo05.jpg"></li>
+                <li><img src="images/photo06.jpg"></li>
+                <li><img src="images/photo07.jpg"></li>
+                <li><img src="images/photo08.jpg"></li>
+                <li><img src="images/photo09.jpg"></li>
+            </ul>
+            <button type="button" id="buttonPrev">＜</button>
+            <button type="button" id="buttonNext">＞</button>
+        </div>   -->
     </section>
 <!-- GalleryEnd -->
 <!-- Project -->
@@ -107,7 +150,7 @@
 <!-- Company -->
     <section id="COMPANY">
         <header>
-            <h2><span>New Company</span></h2>
+            <h2><span>Company</span></h2>
         </header>
         <div class="innerS">
             <ul id="address">
@@ -138,6 +181,7 @@
     <footer>
         Copyright(c) 2016 Sample Inc. All Rights Reserved. Design by <a href="http://f-tpl.com">http://f-tpl.com</a>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>
 <!-- target="blank" -->

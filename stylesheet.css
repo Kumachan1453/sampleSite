@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+
+html {
+    scroll-behavior: smooth;
+}
+
 /* 検証ツールからコピーしたもの */
 body{
 	font: 14px/1.9 'Noto Sans JP', Arial, Verdana, YuGothic, 游ゴシック体, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', メイリオ, Meiryo,sans-serif;
@@ -10,9 +15,8 @@ body{
 	background: #fff;
     margin: 0px;
 }
-/* https://developer.mozilla.org/ja/docs/Web/CSS/text-size-adjust　*/
-
 /*　ここまでコピーしました */
+/* https://developer.mozilla.org/ja/docs/Web/CSS/text-size-adjust　*/
 
 ul {
     list-style: none;
@@ -28,16 +32,8 @@ section{
     padding-bottom: 41px;
 }
 
-/* section{ */
-	/* text-align: center; */
-    /* background-image: url(images/borderBlack.png) repeat-x 50%; */
-    /* repeatは背景画像の繰り返し方法を指定します。 */
-    /* background-size: 1px 1px; */
-    /* padding-top: 30px; */
-/* } */
-
 section h2{
-	font-family: 'Pacifico', cursive;
+	font-family: "Pacifico", "cursive";
 	width: 60%;
 	margin: 0 auto 40px;
 	font-size: 26px;
@@ -52,7 +48,11 @@ section h2 span {
 	padding: 0 80px;
 }
 
-/* class */
+
+/* CSS の text-indent プロパティは、ブロック内のテキストの行の前に置く空白 (字下げ) の幅を設定します。　https://developer.mozilla.org/ja/docs/Web/CSS/text-indent */
+/* CSS の white-space プロパティは、要素内のホワイトスペースをどのように扱うかを設定します。　https://developer.mozilla.org/ja/docs/Web/CSS/white-space */
+/* CSS の overflow プロパティは、要素の内容が多すぎてブロック整形コンテキストに収まらない場合にどうするかを設定します。これは overflow-x および overflow-y の一括指定です。　https://developer.mozilla.org/ja/docs/Web/CSS/overflow */
+
 .LongText{
 	width: 60%;
 	margin: 0 auto;
@@ -96,18 +96,27 @@ section h2 span {
 /* classEnd */
 
 /* Top */
+#header {
+    width: 100%;
+    z-index: 1;
+}
+
 #header div h1 {
     text-align: center;
+    z-index: 1;
 }
 
 #TopLogo {
+    width: 100%;
     padding-top: 50px;
     padding-bottom: 15px;
+    z-index: 1;
 }
 
 #TopLogo img {
     width: 140px;
     height: 80px;
+    z-index: 1;
 }
 
 #MainImage {
@@ -125,6 +134,11 @@ section h2 span {
     width: 1280px;
     height: 528px;
     margin-left: -640px;
+}
+
+
+#MainImage {
+    text-align: center;
 }
 
 #nav {
@@ -155,17 +169,145 @@ section h2 span {
 #nav ul li a:hover {
     text-decoration: underline;
 }
+
+#navbtn{
+    display: none;
+}
+
+.arrow{
+    display: none;
+}
+
 /* TopEnd */
 /* Message */
 /* MessageEnd */
 /* Gallery */
-#GalleryImages {
+
+.slider {
+    position: relative;
+    width: 482px;
+    height: 482px;
+    padding: 0;
+    margin: 1rem auto;
+    box-sizing: unset;
+    border-radius: 6px;
+}
+.slider .slide {
+    width: 482px;
+    height: 482px;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider .slide img {
+    padding: 0;
+    margin: 0;
+    width: 482px;
+    height: 482px;
+}
+
+.slider .slide ul {
+    /* width: 1248px; */
+    /* height: 482px; */
+    padding: 0;
+    margin: 0;
+    border: none;
+    list-style: none;
+    font-size: 0;
+    position: relative;
+}
+.slider .slide li {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    position: absolute;
+    transition: 0.7s cubic-bezier(0.45, 0.06, 0.32, 1);
+    /* イージングの説明　https://ics.media/entry/18730/ */
+    /* cubic-bezier() https://cubic-bezier.com/#1,.24,0,.99 */
+    /* cubic-bezier() 関数記法は、3次ベジェ曲線 を定義します。この曲線は連続的であり、アニメーションの始まりや終わりを緩やかにするためによく使用されます。このため、イージング関数と呼ばれることもあります。 */
+}
+
+.slide li:nth-of-type(1) {
+    left: -482px;
+}
+.slide li:nth-of-type(2) {
+    left: 0px;
+}
+.slide li:nth-of-type(3) {
+    left: 482px;
+}
+.slide li:nth-of-type(4) {
+    left: -482px;
+}
+.slide li:nth-of-type(5) {
+    left: 0px;
+}
+.slide li:nth-of-type(6) {
+    left: 482px;
+}
+.slide li:nth-of-type(7) {
+    left: -482px;
+}
+.slide li:nth-of-type(8) {
+    left: 0px;
+}
+.slide li:nth-of-type(9) {
+    left: 482px;
+}
+/* nth-of-typeとは何か？（nth-childとの違いも踏まえて）　https://techacademy.jp/magazine/25452 */
+
+.controller {
+    display: flex;
+    width: 100%;
+    height: 65px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+.controller .prev-btn {
+    /* margin-left: 5rem; */
+    cursor: pointer;
+    color: #181818;
+}
+.controller .next-btn {
+    /* margin-right: 5rem; */
+    cursor: pointer;
+    color: #181818;
+}
+
+.controller .indicator {
+    display: flex;
+    width: 180px;
+    height: 16px;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    /* background: #181818; */
+    border-radius: 10px;
+}
+
+.indicator span {
+    width: 8px;
+    height: 8px;
+    background: rgb(212, 212, 212);
+    border-radius: 50%;
+    padding: 0;
+    margin: 0 4px 0 4px;
+}
+
+#active {
+    background: gray;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+/* #GalleryImages {
     display: grid;
     grid-template-columns: 482px 482px 482px;
-    /* width: 100%; */
     justify-content:center;
     margin-left: -48px;
-    /* justify-contentプロパティは、フレックスコンテナーの主軸およびグリッドコンテナーのインライン軸に沿って、中身のアイテムの間や周囲に間隔を配置する方法を定義します。 */
 }
 
 #GalleryImages li {
@@ -180,7 +322,8 @@ section h2 span {
 
 #MainImage {
     text-align: center;
-}
+} */
+
 /* GalleryEnd */
 /* Project */
 
@@ -212,7 +355,6 @@ section h2 span {
 #ImgAndLongText2 {
     display: grid;
     grid-template-columns: 350px 350px 350px;
-    /* width: 100%; */
     margin-left: -40px;
     justify-content: center;
 }
@@ -220,14 +362,15 @@ section h2 span {
 #ImgAndLongText2 img {
     display: block;
 	margin: 0 auto 5px;
+    margin-bottom: 0px;
 }
 
 #ImgAndLongText2 li {
     line-height: 2.0;
+    padding-bottom: 20px;
 }
 
 #ImgAndLongText2 .img {
-    padding: 80px 50px;
 	margin-bottom: 40px;
 	line-height: 0 !important;
 	background: #f6f6f6;
@@ -246,39 +389,16 @@ section h2 span {
 	-webkit-background-size: cover;
 	text-align: center;
 	padding: 220px 20px;
-    /* width: 100%; */
-    /* height: 500px; */
-    /* position: relative; */
-    /* overflow: hidden; */
-    /* text-align: center; */
 }
 /* ここまで検証ツールをもとにしました。 */
 /* coverとは画像の縦横比を崩すことなく、画像ができるだけ大きくなるよう拡大縮小します。画像の縦横比が要素と異なる場合、空き領域が残らないように上下または左右のどちらかを切り取ります。 */
 
-/* #LogoBrand { */
-    /* position: absolute; */
-    /* top: 40%; */
-    /* left: 40%; */
-/* } */
-
-/* #LogoBrand img { */
-    /* width: 310px; */
-    /* height: 100px; */
-/* } */
 /* BrandEnd */
 /* Company */
-/* #COMPANY div ul li { */
-    /* display: inline-block; */
-	/* width: 100%; */
-	/* margin: 20px 0; */
-/* } */
 
 #COMPANY p{
     margin-bottom: 5px;
     line-height: 1.2;
-    /* width: 300px; */
-    /* margin-block-start: 1em; */
-    /* margin-block-end: 1em; */
 }
 
 #address  {
@@ -288,8 +408,6 @@ section h2 span {
 /* https://qiita.com/kura07/items/e633b35e33e43240d363 */
 
 #address li {
-    /* display: inline-block; */
-	/* width: 100%; */
 	margin-bottom: 20px;
 }
 
@@ -313,7 +431,7 @@ section h2 span {
 	padding-bottom: 75%;
 	height: 0;
 	overflow: hidden;
-	z-index: 0;
+	z-index: auto;
 }
 
 #googleMap iframe{
@@ -335,25 +453,41 @@ footer {
 }
 /* footerEnd */
 
+/* スマホ版 */
 /* --------responsiveDesign(max-width:480px)---------- */
 @media screen and (max-width:480px) {
+
     body {
         font-size: 14px;
     }
 
     section h2{
         font-family: 'Pacifico', cursive;
-        width: 60%;
+        width: 200px;
         margin: 0 auto 40px;
         font-size: 26px;
         font-weight:bold;
         text-align: center;
         background: url(images/borderBlack.png) repeat-x 0 50%;
         background-size: 1px 1px;
-        margin-left: 65px;
+        padding-left: 5px;
+        padding-right: 5px;
+        /* margin-left: 65px; */
+    }
+
+    section h2 span {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 /* class */
+
+    .arrow{
+        display: block;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     .LongText {
         width: 95%;
         height: auto;
@@ -362,39 +496,189 @@ footer {
 
     .img {
         background-color: rgb(226, 226, 226);
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-left: 4px;
+        margin-bottom: 0px;
     }
 
     .img img {
-        width: 150px;
-        height: 70px;
+        width: 170px;
+        height: 106px;
+        margin-right: 0px;
     }
 /* classEnd */
 /* Top */
-    /* #header { */
-        /* position: fixed; */
-    /* } */
 
-    #TopLogo {
+    #header {
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        background-color: white;
+        z-index: 1;
+        /* z-indexに関するサイト https://techacademy.jp/magazine/34566 */
+    }
+
+    #TopLogo{
+		position: relative;
+		width: 100%;
+		height: 70px;
+		background: #fff;
         padding-top: 0px;
         padding-bottom: 0px;
-    }
-    #TopLogo img {
-        width: 70px;
-        height: 40px;
+        border-bottom: 1px solid #ccc;
+	}
+	
+	#header h1{
+		padding-top: 10px;
+        margin: 0px;
+	}
+	
+	#header h1 img{
+		margin-top: 3px;
+		max-height: 45px;
+		width: auto !important;
+	}
+
+    #header div h1 {
+        text-align: center;
     }
 
+    /* ハンバーガボタン作成 */
+    
     #nav {
-        display: none;
+        position: fixed;
+        bottom: 100%;
+        width: 100%;
+        background: white;
+        display: flex;
+        align-items: center;
+        transition: bottom 0.5s;
+        padding-bottom: 0px;
     }
 
-    #MainImage {
-        padding-top: 0;
+    #nav ul{
+        text-align: left;
+        height: 40.5%;
     }
+
+    #nav ul li {
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+    }
+
+    #nav ul li a{
+        display: block;
+        vertical-align: middle;
+        font-size: 14px;
+    }
+
+    #nav ul li a p{
+        display: inline-block;
+    }
+
+
+    /* ナビゲーションボタン（開く） */
+    #navbtn{
+        display: block;
+        position: fixed;
+        top: 39px;
+        right: 20px;
+        padding: 0;
+        outline: none;
+        border: none;
+        background: none;
+        width: 18px;
+        height: 2px;
+        cursor: pointer;
+        z-index: 1;
+    }
+  
+    #navbtn::before,
+    #navbtn::after{
+        content : '';
+        display: block;
+        height: 2px;
+        background-color: #333333;
+        transform: translateY(-1px);
+        transition: 0.3s ease-in-out;
+    }
+    /* CSSの::afterと::beforeは、疑似要素と呼ばれるものの1つです。これを使うと「HTMLには書かれていない要素もどきをCSSで作ることができる」のです。 https://saruwakakun.com/html-css/basic/before-after */
+    /* CSS の content プロパティは、要素を生成された値で置き換えます。  https://developer.mozilla.org/ja/docs/Web/CSS/content */
+    /* CSS のプロパティ transform は、与えられた要素を回転、拡大縮小、傾斜、移動することできます。 https://developer.mozilla.org/ja/docs/Web/CSS/transform  移動、回転、伸縮は、3D（XYZ方向）による指定ができます。https://qiita.com/7968/items/eddfeb4b424d7c2d2d34 */
+
+    #navbtn::before{
+        transform: translateY(-10px);
+        box-shadow: 0 5px #333333;
+    }
+  
+    /* ナビゲーションボタン（閉じる） */
+    .open #navbtn{
+        z-index: 1;
+    }
+    .open #navbtn::before{
+        transform: rotate(-45deg);
+        box-shadow: none;
+    }
+    .open #navbtn::after{
+        transform: translateX(1px) translateY(-2px) rotate(-135deg);
+        box-shadow: none;
+    }
+    /* ナビゲーションメニュー 開いた時*/
+    .open #nav{
+        bottom: 51.3%;
+    }
+    /* ここまで */
+
 /* TopEnd */
 /* Message */
 /* MessageEnd */
 /* Gallery */
-    #GalleryImages {
+    .slider {
+        width: 300px;
+        height: 300px;
+    }
+    .slider .slide {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .slider .slide img {
+        width: 300px;
+        height: 300px;
+    }
+
+    .slide li:nth-of-type(1) {
+        left: -300px;
+    }
+    .slide li:nth-of-type(2) {
+        left: 0px;
+    }
+    .slide li:nth-of-type(3) {
+        left: 300px;
+    }
+    .slide li:nth-of-type(4) {
+        left: -300px;
+    }
+    .slide li:nth-of-type(5) {
+        left: 0px;
+    }
+    .slide li:nth-of-type(6) {
+        left: 300px;
+    }
+    .slide li:nth-of-type(7) {
+        left: -300px;
+    }
+    .slide li:nth-of-type(8) {
+        left: 0px;
+    }
+    .slide li:nth-of-type(9) {
+        left: 300px;
+    }
+    
+    /* #GalleryImages {
         display: flex;
         flex-direction: column;
     }
@@ -410,14 +694,12 @@ footer {
         width: 100%;
         height: auto;
         margin: 0px;
-    }
+    } */
 /* GalleryEnd */
 /* Project */
     #ImgProject img {
         width: 95%;
         height: auto;
-        /* width: 700px; */
-        /* height: 300px; */
     }
 
 /* ProjectEnd */
@@ -426,21 +708,16 @@ footer {
         display: flex;
         flex-direction: column;
         width: 100%;
-        /* justify-content: center; */
     }
 
-    #ImgAndLongText2 .img {
-        width: 375px;
-        height: 200px;
-        margin-bottom: 10px;
-        /* line-height: 0 !important; */
-        background: #f6f6f6;
-        background-size: 100%;
+    #ImgAndLongText2 p {
+        width: 70%;
     }
 
-    #ImgAndLongText2 .img img {
-        margin: 0px;
-        margin-right: 0px;
+    #ImgAndLongText2 .LongText2 {
+        width: 95%;
+        font-size: 13px;
+        padding-top: 0px;
     }
 
     #BgSec04AndLogoBrand {
@@ -493,6 +770,8 @@ footer {
     }
 /* CompanyEnd */
 }
+
+/* タブレット版 */
 /* --------responsiveDesign(max-width:960px)---------- */
 @media screen and (max-width:960px) and (min-width:481px) {
     body {
@@ -501,17 +780,15 @@ footer {
 /* class */
     .img {
         background-color: rgb(226, 226, 226);
-        margin-right: 100px;
-        margin-left: 100px;
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 90px;
+        padding-bottom: 90px;
         padding-left: 0px;
         padding-right: 0px;
     }
 
     .img img {
-        width: 150px;
-        height: 100px;
+        width: 120px;
+        height: 70px;
     }
 
     .LongText2{
@@ -568,7 +845,7 @@ footer {
 /* Brand */
     #ImgAndLongText2 { 
         display: grid;
-        grid-template-columns: 300px 300px 300px;
+        grid-template-columns: 270px 270px 270px;
         justify-content: center;
     }
 
@@ -596,8 +873,6 @@ footer {
         width: 5%;
         height: auto;
         padding: 50%;
-        /* margin-left: -80px; */
-        /* text-align: center; */
     }
 
     #address li {
